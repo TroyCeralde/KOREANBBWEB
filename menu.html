@@ -1,205 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
-<title>KOREAN BBQ</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https//fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" href="images/LOGO BBQ.jpg"type="image/x-icon">
-<style> .logo{color:#FFF;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering System</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    
-       
-    <section class ="sub-header">
-    <nav>
 
-        <h2 class="logo">KOREAN BBQ</h2>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-window-close-o" onclick="hideMenu()"></i>
-                   
-
-            
-
-   <ul>
-    <li><a href="index.html">HOME</a></li>
-   <li><a href="menu.html">MENU</a></li>
-   <li><a href="SERVICES.html">SERVICES</a><li>
-   <li><a href="CONTACT.html">CONTACT</a></li>
-   <li><a href="ABOUT.html">ABOUT</a></li>
-    
-
-   
-   
-
-</ul>
-</div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-
-
-
-        
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="CONTACT.html">Contact</a></li>
+            <li><a href="Gallery.html">GALLERY</a></li>
+        </ul>
     </nav>
 
-    <h1>MENU</h1>
-</section>
-<!--------MENU Section begin---->
-<div id="menu">
-    <h1 id="section">CHOICES</h1>
-    <div id="menu_row">
-        <div id="menu_col">
-            <h2>HANGE BUTTERED BBQ</h2>
-            <div class="box">
-                <div id="image">
-                    <img src="images/BUTTERED BBQ.jfif ">
+    <div class="container">
+        <!-- Sidebar Categories -->
+        <aside class="categories">
+            <button class="category active" data-category="all">All</button>
+            <button class="category" data-category="burgers">Burgers</button>
+            <button class="category" data-category="fries">Fries</button>
+            <button class="category" data-category="beverages">Beverages</button>
+            <button class="category" data-category="desserts">Desserts</button>
+        </aside>
+
+        <!-- Menu Items -->
+        <main class="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-items">
+                <div class="menu-item" data-category="burgers">
+                    <img src="C:\Users\geela\Downloads\TEST.jfif" alt="Big Mac">
+                    <h3>Big Mac</h3>
+                    <p>₱150</p>
+                    <button class="order-btn">Order</button>
                 </div>
-                <div>
-                    <h3>BUTTERED BBQ</h3>
-                    <h4>₱.250</h4>
+                <div class="menu-item" data-category="burgers">
+                    <img src="images/cheeseburger.png" alt="Cheeseburger">
+                    <h3>Cheeseburger</h3>
+                    <p>₱120</p>
+                    <button class="order-btn">Order</button>
                 </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/chix.jpg">
+                <div class="menu-item" data-category="fries">
+                    <img src="images/fries.png" alt="French Fries">
+                    <h3>French Fries</h3>
+                    <p>₱80</p>
+                    <button class="order-btn">Order</button>
                 </div>
-                <div>
-                    <h3>HANGE HONEY CHICK 02</h3>
-                    <h4>₱.120</h4>
+                <div class="menu-item" data-category="beverages">
+                    <img src="images/coca-cola.png" alt="Coca-Cola">
+                    <h3>Coca-Cola</h3>
+                    <p>₱50</p>
+                    <button class="order-btn">Order</button>
                 </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/HANGE MEATLOAF.jpg">
-                </div>
-                <div>
-                    <h3>HANGE MEATLOAFT BBQ</h3>
-                    <h4>₱.80</h4>
-                </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/CHEESY BBQ.jpg">
-                </div>
-                <div>
-                    <h3>HANGE CHEESY CHICKEN WINGS</h3>
-                    <h4>₱.140</h4>
-                </div>
-            </div>
-        </div>
-        <div id="menu_col">
-            <h2>EXTREME BBQ</h2>
-            <div class="box">
-                <div id="image">
-                    <img src="images/INSTANT POT BBQ CHICKEN CHILI.jpg">
-                </div>
-                <div>
-                    <h3>EXTREME INSTANT POT BBQ CHICKEN CHILI</h3>
-                    <h4>₱.250</h4>
+                <div class="menu-item" data-category="desserts">
+                    <img src="images/sundae.png" alt="Sundae">
+                    <h3>Sundae</h3>
+                    <p>₱90</p>
+                    <button class="order-btn">Order</button>
                 </div>
             </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/BBQ CROCKPOT CHICKEN CHILI.jpg">
-                </div>
-                <div>
-                    <h3>EXTREME BBQ CROCKPOT CHICKEN CHILI</h3>
-                    <h4>₱.180</h4>
-                </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/HONEY CHILI BBQ CHICKEN.jpg">
-                </div>
-                <div>
-                    <h3> EXTREME HONEY CHILI BBQ CHICKEN</h3>
-                    <h4>₱.320</h4>
-                </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/BBQ BEEF,BEACON, & BEAN CHILI.jpg">
-                </div>
-                <div>
-                    <h3>EXTREME BBQ BEEF,BEACON,&BEAN CHILI</h3>
-                    <h4>₱.240</h4>
-                </div>
-            </div>
-        </div>
-        <div id="menu_col">
-            <h2>INFINITE BBQ</h2>
-            <div class="box">
-                <div id="image">
-                    <img src="images/INFINITE PORK BBQ.jfif">
-                </div>
-                <div>
-                    <h3>INFINITE PORK BBQ</h3>
-                    <h4>₱.20</h4>
-                </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/INFINITE CLASSIC BBQ.jfif">
-                </div>
-                <div>
-                    <h3>INFINITE CLASSIC BBQ</h3>
-                    <h4>₱.210</h4>
-                </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/INFINITE BBQ RIBS.jfif">
-                </div>
-                <div>
-                    <h3>INFINITE BBQ RIBS</h3>
-                    <h4>₱.107</h4>
-                </div>
-            </div>
-            <div class="box">
-                <div id="image">
-                    <img src="images/INFINITE FISH BBQ.jpg">
-                </div>
-                <div>
-                    <h3>INFINITE FISH BBQ</h3>
-                    <h4>₱.130</h4>
-                </div>
-            </div>
+        </main>
+
+        <!-- Order Summary -->
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-list"></ul>
+            <p>Total: ₱<span id="total-price">0</span></p>
+            <button id="clear-order">Clear Order</button>
+        </section>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-item-name"></h3>
+            <button class="select-option" data-size="Regular">Regular</button>
+            <button class="select-option" data-size="Large Meal">Large Meal</button>
         </div>
     </div>
-</div>
 
-<!----JavaScript For Toggle Menu -->
-<script>
-    
-    
-    var navLinks= document.getElementById("navLinks");
-    
-    function showMenu(){
-        navLinks.style.right = "0";
-    }
-      function hideMenu(){
-        navLinks.style.right = "-200px";
-    }
-</script>
-
-
-
-
-<!----Footer---->
-<section class="footer">
-        <h4>VISIT OUR SOCIAL MEDIA ACCOUNT</h4>
-        <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-tiktok"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-whatsapp"></i>
-
-</div>
-<p> MADE WITH FRESH AND SAVORY BBQ ALL OVER <i class="fa fa-globe"></i>THE WORLD</p>
-</section>
-</div>
-</div>
+    <script src="script.js"></script>
 </body>
 </html>

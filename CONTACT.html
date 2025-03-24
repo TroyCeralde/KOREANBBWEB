@@ -1,121 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="images/LOGO BBQ.jpg"type="image/x-icon">
-<style>
-body {
-
-background-image: url(images/br.jpg); background-position: center; background-size: cover; 
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
-}
-
-
-.column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - KOREAN BBQ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/LOGO BBQ.jpg" type="image/x-icon">
+    <style>
+        .logo {
+            color: #FFF;
+        }
+        .contact-form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            color: #333;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #FF6347; /* Tomato Red */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .contact-form button:hover {
+            background-color: #FF4500; /* Darker Red */
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <div style="text-align:center">
-    <h2>Contact us</h2>
-    <p>THE BEST OPTION FOR YOU:</p>
-    <p align="center"><img src="images/LOGO BBQ.jpg" width="120" height="120" alt="logo" class="avatar"></p>
-    
-  </div>
-  <div class="row">
-    <div class="column">
-      <img src="images/DAGUPAN CITY.jpg" style="width:100%">
-    </div>
-    <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="Philippines">Philippines</option>
-            <option value="MEXICO">MEXICO</option>
-            <option value="SAUDI ARABIA">SAUDI ARABIA</option>
-            <option value="SPAIN">SPAIN</option>
-            <option value="LEBANON">LEBANON</option>
-            <option value="LAS VEGAS">LAS VEGAS</option>
-            <option value="SOUTH KOREA">SOUTH KOREA</option>
-            <option value="JAPAN">JAPAN</option>
-            <option value="PARIS">PARIS</option>
-            <option value="GERMANY">GERMANY</option>
-            <option value="RUSSIA">RUSSIA</option>
-            <option value="TURKEY">TURKEY</option>
-            <option value="CAMBODIA">CAMBODIA</option>
-            <option value="CHINA">CHINA</option>
-            <option value="SAN FRANSCISCO">SAN FRANSCISCO</option>
-            <option value="SINGAPORE">SINGAPORE</option>
-            <option value="INDIA">INDIA</option>
-            <option value="SWITZERLAND">SWITZERLAND</option>
+    <section class="sub-header">
+        <nav>
+            <h2 class="logo">KOREAN BBQ</h2>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-window-close-o" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="CONTACT.html">CONTACT</a></li>
+                    <li><a href="Gallery.html">GALLERY</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>CONTACT US</h1>
+    </section>
 
+    <!-- Contact Form Section -->
+    <section class="contact">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-  </div>
-</div>
+    <!-- JavaScript For Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
 
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>VISIT OUR SOCIAL MEDIA ACCOUNTS</h4>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-tiktok"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-whatsapp"></i>
+        </div>
+        <p>MADE WITH FRESH AND SAVORY BBQ ALL OVER <i class="fa fa-globe"></i> THE WORLD</p>
+    </section>
 </body>
 </html>
