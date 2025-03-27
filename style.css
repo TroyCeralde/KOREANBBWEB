@@ -1,10 +1,152 @@
 *
-{
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
-
+    background-color: #f8f8f8;
 }
+
+.navbar {
+    background-color: #ffcc00;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
+.categories {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    padding: 10px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    margin: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.category.active {
+    background: #ffcc00;
+}
+
+.menu {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.menu-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.order-btn {
+    display: inline-block;
+    background: #ffcc00;
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: #e6b800;
+}
+
+.order-summary {
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.order-summary h2 {
+    margin-bottom: 15px;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-summary p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.order-summary button {
+    background: #ff0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.order-message {
+    text-align: center;
+    background: #ffcc00;
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .header{
     min-height: 100vh;
     width: 100%;

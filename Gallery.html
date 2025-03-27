@@ -8,50 +8,46 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/LOGO BBQ.jpg" type="image/x-icon">
-    
     <style>
-        /* Popup Modal */
+        /* Popup styling */
         .popup {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
+            display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+        }
+        .popup:target {
+            display: flex;
         }
         .popup-content {
             background: white;
             padding: 20px;
+            border-radius: 10px;
             text-align: center;
+            width: 80%;
+            max-width: 400px;
             position: relative;
-            border-radius: 10px;
-            width: 60%;
-            max-width: 600px;
         }
-        .popup img {
-            width: auto;
-            max-width: 80%;
-            height: auto;
-            max-height: 80vh;
+        .popup-content img {
+            width: 100%;
             border-radius: 10px;
-        }
-        .popup-text {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #333;
         }
         .close-btn {
             position: absolute;
             top: 10px;
             right: 15px;
             font-size: 20px;
-            cursor: pointer;
+            text-decoration: none;
             color: red;
+            font-weight: bold;
         }
+
+        /* Timeline styling */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -76,21 +72,18 @@
     </style>
 </head>
 <body>
-
-    <!-- Header Section -->
+    <!-- Navbar -->
     <section class="sub-header">
         <nav>
             <h2 class="logo">KOREAN BBQ</h2>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-window-close-o" onclick="hideMenu()"></i>
+            <div class="nav-links">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="menu.html">MENU</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="Gallery.html">GALLERY</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
                 </ul>
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         <h1>OUR HISTORY</h1>
     </section>
@@ -98,54 +91,57 @@
     <!-- Timeline Section -->
     <section class="timeline">
         <div class="timeline-item">
-            <img src="C:\Users\geela\Downloads\TEST.jfif" alt="1973: The Beginning" 
-                onclick="openPopup('C:\\Users\\geela\\Downloads\\TEST.jfif', '1973: The Beginning', 'In 1973, the journey began with a small family-run bakery, serving fresh and delicious Korean BBQ dishes.')">
+            <a href="#popup1">
+                <img src="images/history1.jpg" alt="1972 - The Beginning">
+            </a>
+            <h3>1972: The Beginning</h3>
+            <p>The family business started in a small shop, serving authentic Korean BBQ to the local community.</p>
         </div>
 
         <div class="timeline-item">
-            <img src="images/history2.jpg" alt="1980: Expansion" 
-                onclick="openPopup('images/history2.jpg', '1980: Expansion', 'By 1980, our bakery had grown into a full-fledged restaurant, attracting visitors from all over the region.')">
+            <a href="#popup2">
+                <img src="images/history2.jpg" alt="1975 - Growth">
+            </a>
+            <h3>1975: Growth</h3>
+            <p>By 1975, the business expanded with a larger space, attracting more customers from different regions.</p>
         </div>
 
         <div class="timeline-item">
-            <img src="images/history3.jpg" alt="1990: Innovation" 
-                onclick="openPopup('images/history3.jpg', '1990: Innovation', 'In the 90s, we started innovating with new recipes and techniques, incorporating traditional and modern twists.')">
+            <a href="#popup3">
+                <img src="images/history3.jpg" alt="1980 - Innovation">
+            </a>
+            <h3>1980: Innovation</h3>
+            <p>In 1980, new recipes were introduced, blending traditional Korean flavors with modern twists.</p>
         </div>
     </section>
 
-    <!-- Popup Modal -->
-    <div class="popup" id="popup">
+    <!-- Popups -->
+    <div id="popup1" class="popup">
         <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <img id="popup-img" src="" alt="Popup Image">
-            <h3 id="popup-title"></h3>
-            <p class="popup-text" id="popup-text"></p>
+            <a href="#" class="close-btn">&times;</a>
+            <img src="images/history1.jpg" alt="1972 - The Beginning">
+            <h3>1972: The Beginning</h3>
+            <p>The family business started in a small shop, serving authentic Korean BBQ to the local community.</p>
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        var navLinks = document.getElementById("navLinks");
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="images/history2.jpg" alt="1975 - Growth">
+            <h3>1975: Growth</h3>
+            <p>By 1975, the business expanded with a larger space, attracting more customers from different regions.</p>
+        </div>
+    </div>
 
-        function showMenu() {
-            navLinks.style.right = "0";
-        }
-
-        function hideMenu() {
-            navLinks.style.right = "-200px";
-        }
-
-        function openPopup(imgSrc, title, text) {
-            document.getElementById("popup-img").src = imgSrc;
-            document.getElementById("popup-title").innerText = title;
-            document.getElementById("popup-text").innerText = text;
-            document.getElementById("popup").style.display = "flex";
-        }
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-    </script>
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="images/history3.jpg" alt="1980 - Innovation">
+            <h3>1980: Innovation</h3>
+            <p>In 1980, new recipes were introduced, blending traditional Korean flavors with modern twists.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <section class="footer">
@@ -159,6 +155,5 @@
         </div>
         <p>MADE WITH FRESH AND SAVORY BBQ ALL OVER <i class="fa fa-globe"></i> THE WORLD</p>
     </section>
-
 </body>
 </html>
