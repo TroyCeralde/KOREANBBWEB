@@ -2,28 +2,113 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - KOREAN BBQ</title>
+    <title>Louella Bakery</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="images/LOGO BBQ.jpg" type="image/x-icon">
+    <link rel="icon" href="images/louellabakerylogo.jpg" type="image/x-icon">
     <style>
-        .logo {
-            color: #FFF;
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
-        .contact-form {
-            width: 50%;
-            margin: 0 auto;
-            padding: 20px;
+
+        body {
             background-color: #f9f9f9;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            color: #FFD700; /* Gold Color */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #222;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+            }
+
+            .nav-links ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .contact-form {
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .contact-form h2 {
-            text-align: center;
-            color: #333;
-        }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -33,36 +118,70 @@
             border: 1px solid #ccc;
             font-size: 16px;
         }
+
         .contact-form button {
             width: 100%;
-            padding: 15px;
-            background-color: #FF6347; /* Tomato Red */
+            padding: 12px;
+            background-color: #FF6347;
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 18px;
+            cursor: pointer;
         }
+
         .contact-form button:hover {
-            background-color: #FF4500; /* Darker Red */
+            background-color: #FF4500;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .social-icons {
+            margin: 10px 0;
+        }
+
+        .social-icons a {
+            font-size: 30px;
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+
+        @media screen and (max-width: 600px) {
+            .social-icons a {
+                font-size: 24px;
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <section class="sub-header">
-        <nav>
-            <h2 class="logo">KOREAN BBQ</h2>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="menu.html">MENU</a></li>
-                    <li><a href="CONTACT.html">CONTACT</a></li>
-                    <li><a href="Gallery.html">GALLERY</a></li>
-                </ul>
-            </div>
-        </nav>
-        <h1>CONTACT US</h1>
-    </section>
-    
+    <!-- Navbar -->
+    <nav>
+        <h2 class="logo">LOUELLA BAKERY 1974</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 style="text-align: center; padding: 20px;">CONTACT US</h1>
+
     <!-- Contact Form Section -->
     <section class="contact">
         <div class="contact-form">
@@ -75,18 +194,37 @@
             </form>
         </div>
     </section>
-    
+
     <!-- Footer -->
-    <section class="footer">
-        <h4>VISIT OUR SOCIAL MEDIA ACCOUNTS</h4>
-        <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-tiktok"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-whatsapp"></i>
+    <footer class="footer">
+        <h4>Follow Us on Social Media</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100063899358118" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/yourpage" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.tiktok.com/@yourpage" target="_blank">
+                <i class="fa fa-tiktok"></i>
+            </a>
+            <a href="https://instagram.com/yourpage" target="_blank">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/yourphonenumber" target="_blank">
+                <i class="fa fa-whatsapp"></i>
+            </a>
         </div>
-        <p>MADE WITH FRESH AND SAVORY BBQ ALL OVER <i class="fa fa-globe"></i> THE WORLD</p>
-    </section>
+        <p>📍 Louella Bakery, Bugallon, Pangasinan</p>
+        <p>&copy; 2025 Louella Bakery. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
