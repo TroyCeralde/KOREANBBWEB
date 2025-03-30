@@ -2,196 +2,104 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louella Bakery</title>
+    <title>Contact - LOUELLA BAKERY</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/louellabakerylogo.jpg" type="image/x-icon">
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #f9f9f9;
-        }
-
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #333;
-            padding: 15px 20px;
-        }
-
-        .logo {
-            color: #FFD700; /* Gold Color */
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-        }
-
-        .nav-links ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links ul li {
-            margin: 0 15px;
-        }
-
-        .nav-links ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-        }
-
-        .nav-links ul li a:hover {
-            color: #FFD700;
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: #222;
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .nav-links ul {
-                flex-direction: column;
-            }
-
-            .nav-links ul li {
-                margin: 10px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        /* Contact Form */
-        .contact {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .contact-form {
-            width: 80%;
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .contact-form button {
-            width: 100%;
-            padding: 12px;
-            background-color: #FF6347;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #FF4500;
-        }
-
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
-
-        .social-icons {
-            margin: 10px 0;
-        }
-
-        .social-icons a {
-            font-size: 30px;
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #FFD700;
-        }
-
-        @media screen and (max-width: 600px) {
-            .social-icons a {
-                font-size: 24px;
-                margin: 0 10px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav>
-        <h2 class="logo">LOUELLA BAKERY 1974</h2>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="nav-links">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="menu.html">MENU</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <h1 style="text-align: center; padding: 20px;">CONTACT US</h1>
+    <section class="sub-header">
+        <nav>
+            <h2 class="logo">LOUELLA BAKERY 1974</h2>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>CONTACT US</h1>
+    </section>
 
     <!-- Contact Form Section -->
-    <section class="contact">
+    <section class="contact-section">
         <div class="contact-form">
-            <h2>Get in Touch</h2>
-            <form action="#" method="POST">
+            <h3>Contact Form</h3>
+            <form action="#">
+                <!-- Name -->
                 <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                
+                <!-- Mobile Number -->
+                <input type="tel" name="mobile" placeholder="Your Mobile Number" required>
+                
+                <!-- Email -->
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                
+                <!-- Address -->
+                <div class="address-field">
+                    <label for="province">Province</label>
+                    <select id="province" name="province" required>
+                        <option value="pangasinan">Pangasinan</option>
+                        <option value="batangas">Batangas</option>
+                        <option value="cebu">Cebu</option>
+                        <option value="ilocos">Ilocos Norte</option>
+                    </select>
+
+                    <label for="city">City</label>
+                    <select id="city" name="city" required>
+                        <option value="dagupan">Dagupan</option>
+                        <option value="san-carlos">San Carlos</option>
+                        <option value="lingayen">Lingayen</option>
+                        <option value="alaminos">Alaminos</option>
+                    </select>
+
+                    <label for="barangay">Barangay</label>
+                    <select id="barangay" name="barangay" required>
+                        <option value="pangasinan">Barangay 1</option>
+                        <option value="pangasinan">Barangay 2</option>
+                        <option value="pangasinan">Barangay 3</option>
+                        <option value="pangasinan">Barangay 4</option>
+                    </select>
+
+                    <label for="street">Street</label>
+                    <input type="text" id="street" name="street" placeholder="Street Name" required>
+
+                    <label for="house">House Number</label>
+                    <input type="text" id="house" name="house" placeholder="House Number" required>
+                </div>
+
+                <!-- Icon Boxes with Toggle Feature -->
+                <div class="address-icons">
+                    <!-- Home Radio -->
+                    <input type="radio" name="location" id="home" class="location-option" hidden>
+                    <label class="icon-box" for="home">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </label>
+                    <!-- Office Radio -->
+                    <input type="radio" name="location" id="office" class="location-option" hidden>
+                    <label class="icon-box" for="office">
+                        <i class="fa fa-building"></i>
+                        <span>Office</span>
+                    </label>
+                </div>
             </form>
+        </div>
+
+        <!-- Location and Map Section -->
+        <div class="location-map">
+            <p class="pin-location">Pin Your Location Here</p>
+            <div class="map-container">
+                <!-- OpenStreetMap iframe (No API Key required) -->
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=119.3%2C13.1%2C124.3%2C20.3&layer=mapnik" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- Submit Button under Map -->
+            <button class="submit-btn">Submit</button>
         </div>
     </section>
 
@@ -219,12 +127,5 @@
         <p>&copy; 2025 Louella Bakery. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for Menu Toggle -->
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
-    </script>
 </body>
 </html>
