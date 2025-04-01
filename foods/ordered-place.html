@@ -7,22 +7,123 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-        </ul>
-    </nav>
-
+    <style>/* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Centered Container */
+        .container {
+            width: 400px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        /* Order Message */
+        .order-message h2 {
+            font-size: 24px;
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        
+        /* Animated Loading Text */
+        .loading-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Animated Delivery Image */
+        .order-image {
+            width: 200px;
+            margin: 15px 0;
+        }
+        
+        /* Countdown Timer */
+        .delivery-time {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+        
+        /* Button Styling */
+        .order-btn {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .order-btn:hover {
+            background-color: #cc5500;
+        }
+        
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        </style>
     <div class="container">
         <div class="order-message">
-            <h2>Order Placed Successfully!</h2>
-            <p>Thank you for your order. Your food is being prepared.</p>
-            <img src="images/order-confirmation.png" alt="Order Placed" class="order-image">
+            <h2>🎉 Order Placed Successfully!</h2>
+            <p class="loading-text">🚚 Preparing your order<span id="dots">...</span></p>
+
+            <!-- Animated Delivery Image -->
+            <img src="https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" 
+                 alt="Delivery Guy" class="order-image">
+
+            <!-- Countdown Timer -->
+            <p class="delivery-time">Estimated Delivery Time: <span id="timer">15:00</span></p>
+
+            <!-- Back to Menu Button -->
             <a href="menu.html" class="order-btn">Back to Menu</a>
         </div>
     </div>
+
+    <!-- Minimal JavaScript for Timer & Loading Animation -->
+    <script>
+        // Countdown Timer
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        let timerDisplay = document.getElementById("timer");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                timerDisplay.textContent = "🚀 Arriving Now!";
+            }
+        }
+        updateTimer();
+
+        // Animated Loading Dots
+        let dots = document.getElementById("dots");
+        setInterval(() => {
+            dots.textContent = dots.textContent.length < 3 ? dots.textContent + "." : "";
+        }, 500);
+    </script>
 </body>
 </html>

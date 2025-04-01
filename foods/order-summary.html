@@ -4,28 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="order-summary.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="C:\Users\63950\Documents\GitHub\KOREANBBWEB\index.html">HOME</a></li>
-            <li><a href="menu.html">MENU</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-        </ul>
-    </nav>
+    <style>
+        /* General Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('images/background.jpg'); /* Replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Order Summary Header */
+h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Animated Image */
+.animated-img {
+    width: 60%;
+    margin: 15px 0;
+    animation: zoomIn 1.5s ease-in-out infinite alternate;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #ff6600;
+    color: white;
+}
+
+/* Total Price */
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6600;
+    margin-top: 10px;
+}
+
+/* Buttons Styling */
+.buttons {
+    margin-top: 20px;
+}
+
+.order-btn, .cancel-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.order-btn {
+    background-color: #ff6600;
+    color: white;
+    margin-right: 10px;
+}
+
+.order-btn:hover {
+    background-color: #cc5500;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.cancel-btn:hover {
+    background-color: #999;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+    </style>
     <div class="container">
         <div class="order-summary">
-            <h2>Order Summary</h2>
-            <ul id="order-list">
-                <li>No items selected</li>
-            </ul>
-            <p>Total: <span id="total-price">₱0</span></p>
-            <form action="ordered-place.html" method="get">
-                <button type="submit" class="order-btn">Place Order</button>
+            <h2>Your Order Summary</h2>
+
+            <!-- Animated Order Summary Image -->
+            <img src="https://media.giphy.com/media/l0K4bUfaViH2XIfoI/giphy.gif" alt="Order Summary Image" class="animated-img">
+
+            <!-- Order Items Displayed -->
+            <div class="order-items">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Only selected items from menu should appear -->
+                        <tr>
+                            <td>Cake</td>
+                            <td>₱150</td>
+                        </tr>
+                        <tr>
+                            <td>Chocolate Bread</td>
+                            <td>₱100</td>
+                        </tr>
+                        <!-- Add more rows dynamically based on selection -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Total Price -->
+            <p class="total-price">Total: <strong>₱250</strong></p>
+
+            <!-- Action Buttons -->
+            <div class="buttons">
+                <a href="ordered-place.html" class="order-btn">Place Order</a>
                 <a href="menu.html" class="cancel-btn">Cancel</a>
-            </form>
+            </div>
         </div>
     </div>
 </body>

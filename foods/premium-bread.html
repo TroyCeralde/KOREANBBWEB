@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - All Items</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Cake</title>
+    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        /* Image zoom effect */
+        .menu-item img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -23,44 +34,15 @@
 
     <div class="container">
         <aside class="categories">
-            <a href="menu.html" class="category active">All</a>
+            <a href="menu.html" class="category">All</a>
             <a href="standard-bread.html" class="category">STANDARD BREAD</a>
-            <a href="premium-bread.html" class="category">PREMIUM BREAD</a>
+            <a href="premium-bread.html" class="category active">PREMIUM BREAD</a>
             <a href="cake.html" class="category">CAKE</a>
         </aside>
 
         <main class="menu">
-            <h2>All Items</h2>
+            <h2>Cake</h2>
             <div class="menu-items">
-                <!-- Standard Bread -->
-                <div class="menu-item">
-                    <img src="images/standard1.jpg" alt="Standard Bread 1">
-                    <h3>Standard Bread 1</h3>
-                    <p>₱50</p>
-                    <a href="order-summary.html?item=Standard%20Bread%201&price=50" class="order-btn">Order Now</a>
-                </div>
-                <div class="menu-item">
-                    <img src="images/standard2.jpg" alt="Standard Bread 2">
-                    <h3>Standard Bread 2</h3>
-                    <p>₱55</p>
-                    <a href="order-summary.html?item=Standard%20Bread%202&price=55" class="order-btn">Order Now</a>
-                </div>
-
-                <!-- Premium Bread -->
-                <div class="menu-item">
-                    <img src="images/premium1.jpg" alt="Premium Bread 1">
-                    <h3>Premium Bread 1</h3>
-                    <p>₱70</p>
-                    <a href="order-summary.html?item=Premium%20Bread%201&price=70" class="order-btn">Order Now</a>
-                </div>
-                <div class="menu-item">
-                    <img src="images/premium2.jpg" alt="Premium Bread 2">
-                    <h3>Premium Bread 2</h3>
-                    <p>₱80</p>
-                    <a href="order-summary.html?item=Premium%20Bread%202&price=80" class="order-btn">Order Now</a>
-                </div>
-
-                <!-- Cakes -->
                 <div class="menu-item">
                     <img src="images/cake1.jpg" alt="Cake 1">
                     <h3>Cake 1</h3>
@@ -72,6 +54,12 @@
                     <h3>Cake 2</h3>
                     <p>₱170</p>
                     <a href="order-summary.html?item=Cake%202&price=170" class="order-btn">Order Now</a>
+                </div>
+                <div class="menu-item">
+                    <img src="images/cake.jpg" alt="Delicious Cake">
+                    <h3>Delicious Cake</h3>
+                    <p>₱250</p>
+                    <a href="order-summary.html?item=Delicious%20Cake&price=250" class="order-btn">Order Now</a>
                 </div>
             </div>
         </main>
