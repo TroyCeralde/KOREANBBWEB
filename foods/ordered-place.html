@@ -1,129 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Placed</title>
-    <link rel="stylesheet" href="style2.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Placed</title>
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="icon" href="C:\Users\63950\Documents\GitHub\KOREANBBWEB\images\louellabakerylogo.jpg" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 400px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .order-message h2 {
+      font-size: 24px;
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+
+    .loading-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .dots::after {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      animation: dots 1.5s steps(4, end) infinite;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    @keyframes dots {
+      0% { content: ""; }
+      25% { content: "."; }
+      50% { content: ".."; }
+      75% { content: "..."; }
+      100% { content: ""; }
+    }
+
+    .order-image {
+      width: 200px;
+      margin: 15px 0;
+    }
+
+    .delivery-time {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff6600;
+      margin-bottom: 20px;
+      height: 24px;
+    }
+
+    .fake-timer {
+      display: inline-block;
+      animation: countdown 15s steps(15, end) forwards;
+      white-space: nowrap;
+    }
+
+    @keyframes countdown {
+      0%   { content: "15:00"; }
+      6.66% { content: "14:00"; }
+      13.33% { content: "13:00"; }
+      20% { content: "12:00"; }
+      26.66% { content: "11:00"; }
+      33.33% { content: "10:00"; }
+      40% { content: "09:00"; }
+      46.66% { content: "08:00"; }
+      53.33% { content: "07:00"; }
+      60% { content: "06:00"; }
+      66.66% { content: "05:00"; }
+      73.33% { content: "04:00"; }
+      80% { content: "03:00"; }
+      86.66% { content: "02:00"; }
+      93.33% { content: "01:00"; }
+      100% { content: "🚀 Arriving Now!"; }
+    }
+
+    .fake-timer::after {
+      content: "15:00";
+      animation: countdown 15s steps(15, end) forwards;
+    }
+
+    .order-btn {
+      display: inline-block;
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    .order-btn:hover {
+      background-color: #cc5500;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <style>/* General Page Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        /* Centered Container */
-        .container {
-            width: 400px;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        
-        /* Order Message */
-        .order-message h2 {
-            font-size: 24px;
-            color: #ff6600;
-            margin-bottom: 10px;
-        }
-        
-        /* Animated Loading Text */
-        .loading-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        /* Animated Delivery Image */
-        .order-image {
-            width: 200px;
-            margin: 15px 0;
-        }
-        
-        /* Countdown Timer */
-        .delivery-time {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ff6600;
-            margin-bottom: 20px;
-        }
-        
-        /* Button Styling */
-        .order-btn {
-            display: inline-block;
-            background-color: #ff6600;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-        
-        .order-btn:hover {
-            background-color: #cc5500;
-        }
-        
-        /* Fade-in Animation */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        </style>
-    <div class="container">
-        <div class="order-message">
-            <h2>🎉 Order Placed Successfully!</h2>
-            <p class="loading-text">🚚 Preparing your order<span id="dots">...</span></p>
+  <div class="container">
+    <div class="order-message">
+      <h2>🎉 Order Placed Successfully!</h2>
+      <p class="loading-text">🚚 Preparing your order<span class="dots"></span></p>
 
-            <!-- Animated Delivery Image -->
-            <img src="https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" 
-                 alt="Delivery Guy" class="order-image">
+      <img src="https://i.pinimg.com/originals/6f/0f/7c/6f0f7c0a14deb625101bf9393c01edb6.gif" alt="Delivery Guy" class="order-image" />
 
-            <!-- Countdown Timer -->
-            <p class="delivery-time">Estimated Delivery Time: <span id="timer">15:00</span></p>
+      <!-- This just an not the actual time but it was generated by an css  -->
+      <p class="delivery-time">
+        Delivery Time Left: <span class="fake-timer"></span>
+      </p>
 
-            <!-- Back to Menu Button -->
-            <a href="menu.html" class="order-btn">Back to Menu</a>
-        </div>
+      <a href="menu.html" class="order-btn">Back to Menu</a>
     </div>
-
-    <!-- Minimal JavaScript for Timer & Loading Animation -->
-    <script>
-        // Countdown Timer
-        let timeLeft = 15 * 60; // 15 minutes in seconds
-        let timerDisplay = document.getElementById("timer");
-
-        function updateTimer() {
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-            if (timeLeft > 0) {
-                timeLeft--;
-                setTimeout(updateTimer, 1000);
-            } else {
-                timerDisplay.textContent = "🚀 Arriving Now!";
-            }
-        }
-        updateTimer();
-
-        // Animated Loading Dots
-        let dots = document.getElementById("dots");
-        setInterval(() => {
-            dots.textContent = dots.textContent.length < 3 ? dots.textContent + "." : "";
-        }, 500);
-    </script>
+  </div>
 </body>
 </html>

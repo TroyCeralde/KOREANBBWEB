@@ -657,3 +657,13 @@ input[type="radio"] {
         width: 100%;
     }
 }
+.nav-links ul li a.active {
+    color: #FFD700; /* Yellow */
+    font-weight: bold;
+}
+
+.nav-links ul li a.active::after {
+    width: 100%;
+    background: #FFD700;
+}
+
